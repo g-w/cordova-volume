@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="de.codevise.cordova.volume"
+        version="0.0.1">
+
+  <name>Volume</name>
+
+  <description>A plugin to query the current device volumen.</description>
+  <repo>https://github.com/g-w/cordova-volume</repo>
+  <keywords>volume,  ios, android</keywords>
+  <license>MIT</license>
+
+  <author>Gregor Weckbecker</author>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+
+  <js-module src="www/volume.js" name="Volume">
+    <clobbers target="plugin.volume" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Volume">
+        <param name="ios-package" value="Volume" onload="true" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/Volume.h" />
+    <source-file src="src/ios/Volume.m" />
+  </platform>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Volume">
+        <param name="android-package" value="de.codevise.cordova.volume.Volume"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/de/codevise/cordova/volume/Volume.java" target-dir="src/de/codevise/cordova/volume" />
+  </platform>
+
+</plugin>
