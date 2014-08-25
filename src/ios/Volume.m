@@ -2,6 +2,11 @@
 
 @implementation Volume
 
+- (void) pluginInitialize {
+  [super pluginInitialize];
+  [[AVAudioSession sharedInstance] setActive:YES error:nil];
+}
+
 - (void) getVolume:(CDVInvokedUrlCommand*)command {
   AVAudioSession* audioSession = [AVAudioSession sharedInstance];
   float volume = audioSession.outputVolume;
