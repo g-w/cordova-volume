@@ -7,7 +7,12 @@ var volume = {
    */
   getVolume: function (callback) {
     cordova.exec(callback, null, 'Volume', 'getVolume', []);
+  },
+
+  setVolumeChangeCallback: function (callback) {
+    cordova.exec(callback, null, 'Volume', 'setVolumenChangeCallback', []);
   }
+
 };
 
 module.exports = volume;
