@@ -8,7 +8,7 @@ The plugin exposes one method
 current volume and passes it to the callback. Example:
 
 ```
-window.plugin.getVolume(function(volume) {
+window.plugin.volume.getVolume(function(volume) {
   alert("The current volume is " + volume);
 });
 ```
