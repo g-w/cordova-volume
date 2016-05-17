@@ -7,7 +7,7 @@
   <name>Volume</name>
 
   <description>A plugin to query the current device volumen.</description>
-  <repo>https://github.com/g-w/cordova-volume</repo>
+  <repo>https://github.com/whitmer/cordova-volume</repo>
   <keywords>volume,  ios, android</keywords>
   <license>MIT</license>
 
