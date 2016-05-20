@@ -57,9 +57,6 @@ public class Volume extends CordovaPlugin {
     public void initialize (CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         context = super.cordova.getActivity().getApplicationContext();
-
-        SettingsContentObserver observer = new SettingsContentObserver(new Handler());
-        context.getContentResolver().registerContentObserver(System.CONTENT_URI, true, observer);
     }
 
     @Override
@@ -69,6 +66,10 @@ public class Volume extends CordovaPlugin {
             return true;
         } else if ("setVolumenChangeCallback".equals(action)) {
             changedEventCallback = callbackContext;
+
+            SettingsContentObserver observer = new SettingsContentObserver(new Handler());
+            context.getContentResolver().registerContentObserver(System.CONTENT_URI, true, observer);
+
             return true;
         }
 
